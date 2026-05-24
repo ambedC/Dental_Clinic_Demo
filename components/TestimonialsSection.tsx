@@ -106,7 +106,7 @@ export default function TestimonialsSection() {
         {testimonialsData.map((item) => (
           <div
             key={item.id}
-            className="testimonial-card flex flex-col justify-between p-8 rounded-[2rem] bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.05] transition-all duration-500 hover:border-white/[0.12] aspect-square"
+            className="testimonial-card flex flex-col justify-between p-8 rounded-[2rem] bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.05] transition-all duration-500 hover:border-white/[0.12] aspect-square w-full max-w-sm mx-auto md:max-w-none"
           >
             {/* Top Rating */}
             <div className="flex items-center justify-between w-full">

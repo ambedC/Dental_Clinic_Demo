@@ -61,7 +61,7 @@ export default function AboutSection() {
       <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-20 xl:gap-28 w-full">
         
         {/* Left Column: Image */}
-        <div className="about-image-wrap w-full lg:w-[42%] aspect-square md:aspect-[4/5] relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-sm bg-zinc-100 order-2 lg:order-1">
+        <div className="about-image-wrap w-full max-w-md mx-auto lg:mx-0 lg:w-[42%] aspect-square lg:aspect-[4/5] relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-sm bg-zinc-100 order-2 lg:order-1">
           <Image
             src="/about.jpg"
             alt="About Ferox Dentistry"

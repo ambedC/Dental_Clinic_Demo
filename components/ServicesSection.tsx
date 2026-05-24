@@ -72,7 +72,7 @@ function ServiceCard({ id, title, italicWord, description, image }: ServiceItem)
   };
 
   return (
-    <div className="service-card group [perspective:1000px] aspect-square w-full cursor-pointer select-none">
+    <div className="service-card group [perspective:1000px] aspect-square w-full max-w-sm mx-auto sm:max-w-none cursor-pointer select-none">
       <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         
         {/* Card Front (White, enlarged text, minimal spacing) */}

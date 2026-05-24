@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,9 +17,21 @@ export default function Navbar() {
     { label: "Contact", href: "#contact" }
   ];
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
   return (
     <>
-      <header className="relative w-full z-30 flex items-center justify-between px-6 py-6 md:px-16 md:py-8 lg:px-24">
+      <header className="relative w-full z-50 flex items-center justify-between px-6 py-6 md:px-16 md:py-8 lg:px-24">
         {/* Logo */}
         <a href="#home" className="flex items-center select-none">
           <span className="font-sans text-[11px] md:text-lg font-semibold tracking-[0.25em] text-white hover:text-white/80 transition-colors uppercase">
@@ -58,7 +70,7 @@ export default function Navbar() {
         >
           <span
             className={`w-5 h-0.5 bg-white transition-all duration-300 ${
-              isMenuOpen ? "transform rotate-45 translate-y-1" : ""
+              isMenuOpen ? "transform rotate-45 translate-y-1.5" : ""
             }`}
           />
           <span
@@ -68,7 +80,7 @@ export default function Navbar() {
           />
           <span
             className={`w-5 h-0.5 bg-white transition-all duration-300 ${
-              isMenuOpen ? "transform -rotate-45 -translate-y-1" : ""
+              isMenuOpen ? "transform -rotate-45 -translate-y-1.5" : ""
             }`}
           />
         </button>

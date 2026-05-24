@@ -45,10 +45,10 @@ export default function HeroContent() {
   }, []);
 
   return (
-    <main ref={containerRef} className="relative w-full z-20 flex-1 flex flex-col justify-end px-6 pb-12 md:px-16 md:pb-16 lg:px-24 lg:pb-20 select-none">
+    <main ref={containerRef} className="relative w-full z-20 flex-1 flex flex-col justify-end px-6 pb-8 pt-2 md:px-16 md:pb-16 lg:px-24 lg:pb-20 select-none">
       {/* Large Typography (Middle Upper Area) */}
-      <div className="mb-auto mt-12 md:mt-20 max-w-4xl">
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[6.2vw] font-sans font-light tracking-tight text-white leading-[0.98] select-text">
+      <div className="mb-auto mt-6 sm:mt-12 md:mt-20 max-w-4xl">
+        <h1 className="text-[8.8vw] sm:text-7xl md:text-8xl lg:text-[6.2vw] font-sans font-light tracking-tight text-white leading-[0.98] select-text">
           <div className="overflow-hidden block py-1">
             <span className="reveal-line block">Bespoke Smiles,</span>
           </div>
@@ -64,7 +64,7 @@ export default function HeroContent() {
       </div>
 
       {/* Small content (Bottom Center) */}
-      <div className="fade-in-content flex flex-col items-center justify-center text-center gap-1.5 w-full md:max-w-lg mx-auto mt-12 opacity-0">
+      <div className="fade-in-content flex flex-col items-center justify-center text-center gap-1.5 w-full md:max-w-lg mx-auto mt-6 sm:mt-10 md:mt-12 opacity-0">
         <p className="text-white/80 text-xs sm:text-xs md:text-sm font-light tracking-[1px] leading-[20px] select-text">
           A new standard of personalized dentistry. Combining advanced clinical precision with an unmatched dedication to your comfort.
         </p>
