@@ -73,7 +73,7 @@ function ServiceCard({ id, title, italicWord, description, image }: ServiceItem)
 
   return (
     <div className="service-card group [perspective:1000px] aspect-square w-full max-w-sm mx-auto sm:max-w-none cursor-pointer select-none">
-      <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+      <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)]">
         
         {/* Card Front (White, enlarged text, minimal spacing) */}
         <div className="absolute inset-0 w-full h-full rounded-[2rem] md:rounded-[2.5rem] bg-white p-6 md:p-8 flex flex-col justify-between [backface-visibility:hidden] shadow-sm hover:shadow-md transition-shadow duration-500">
@@ -143,7 +143,9 @@ export default function ServicesSection() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const ctx = gsap.context(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
       // Scrub animations for Services section
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -174,7 +176,17 @@ export default function ServicesSection() {
       );
     }, containerRef);
 
-    return () => ctx.revert();
+    mm.add("(max-width: 767px)", () => {
+      // Ensure elements are fully visible on mobile without scroll animations
+      gsap.set([".services-label", ".services-title-wrap", ".service-card"], { 
+        clearProps: "all",
+        opacity: 1,
+        y: 0,
+        scale: 1
+      });
+    }, containerRef);
+
+    return () => mm.revert();
   }, []);
 
   return (

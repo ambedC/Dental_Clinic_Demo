@@ -47,7 +47,7 @@ export default function HeroContent() {
   return (
     <main ref={containerRef} className="relative w-full z-20 flex-1 flex flex-col justify-end px-6 pb-8 pt-2 md:px-16 md:pb-16 lg:px-24 lg:pb-20 select-none">
       {/* Large Typography (Middle Upper Area) */}
-      <div className="mb-auto mt-6 sm:mt-12 md:mt-20 max-w-4xl">
+      <div className="mt-auto mb-6 sm:mb-auto sm:mt-12 md:mt-20 max-w-4xl">
         <h1 className="text-[8.8vw] sm:text-7xl md:text-8xl lg:text-[6.2vw] font-sans font-light tracking-tight text-white leading-[0.98] select-text">
           <div className="overflow-hidden block py-1">
             <span className="reveal-line block">Bespoke Smiles,</span>
